@@ -9,17 +9,26 @@ public class Player : MonoBehaviour
     PlayerMovement movement;
     Animator anim;
 
+    Gun gun;
+
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
         movement = GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();
+
+        gun = GetComponentInChildren<Gun>();
     }
     private void Update()
     {
         Move();
         AnimatePlayer();
         MouseFlip();
+
+        if (input.Shoot)
+        {
+            gun.Shoot();
+        }
     }
 
     private void Move()
