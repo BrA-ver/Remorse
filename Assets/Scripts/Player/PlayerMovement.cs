@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float maxSpeed = 7.5f;
 
-    public Vector2 Velocity { get { return rb.velocity; } }
+    public Vector2 Velocity { get { return rb.linearVelocity; } }
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 velocity = direction * maxSpeed;
-        rb.velocity = velocity;
+        rb.linearVelocity = velocity;
     }
 
     public void Move(Vector2 newDir)

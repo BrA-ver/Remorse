@@ -56,8 +56,8 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 targetVel = direction * moveSpeed;
-        Vector2 velocity = Vector2.MoveTowards(rb.velocity, targetVel, acceleration * Time.deltaTime);
-        rb.velocity = velocity;
+        Vector2 velocity = Vector2.MoveTowards(rb.linearVelocity, targetVel, acceleration * Time.deltaTime);
+        rb.linearVelocity = velocity;
     }
 
     void LookAtPlayer()

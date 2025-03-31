@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour
     {
         Rigidbody2D newBullet = Instantiate(bullet, shootPoint.position, Quaternion.identity);
         newBullet.transform.right = direction;
-        newBullet.velocity = newBullet.transform.right * shootSpeed;
+        newBullet.linearVelocity = newBullet.transform.right * shootSpeed;
     }
 
     void Cooldown()
